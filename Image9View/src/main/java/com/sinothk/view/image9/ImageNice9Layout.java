@@ -139,6 +139,7 @@ import java.util.List;
  */
 
 public class ImageNice9Layout extends LinearLayout implements MyItemTouchCallback.OnDragListener {
+
     private RecyclerView mRecycler;
     private TextView mTip;
     private VirtualLayoutManager layoutManager;
@@ -228,6 +229,7 @@ public class ImageNice9Layout extends LinearLayout implements MyItemTouchCallbac
     private void initView(Context context) {
         mContext = context;
         View view = LayoutInflater.from(mContext).inflate(R.layout.view_imagemulit_layout, this);
+
         mRecycler = (RecyclerView) view.findViewById(R.id.drag_recycler);
         mTip = (TextView) view.findViewById(R.id.drag_tip);
         layoutManager = new VirtualLayoutManager(mContext);
@@ -258,7 +260,9 @@ public class ImageNice9Layout extends LinearLayout implements MyItemTouchCallbac
             mTip.setVisibility(canDrag ? VISIBLE : INVISIBLE);
             final int num = pictures.size();
             ViewGroup.LayoutParams layoutParams = mRecycler.getLayoutParams();
-            int displayW = DisplayUtils.getDisplayWidth(mContext);
+
+            int displayW = DisplayUtils.getDisplayWidth(mContext) * 4 / 5;
+
             layoutParams.width = displayW;
             int height;
             if (num == 1) {

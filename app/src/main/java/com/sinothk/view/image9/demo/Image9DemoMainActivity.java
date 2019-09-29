@@ -11,7 +11,7 @@ public class Image9DemoMainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main_image_9_demo);
     }
 
     public void onList(View v){

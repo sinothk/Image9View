@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -42,7 +43,7 @@ public class ImageMulitVAdapter extends VirtualLayoutAdapter<ImageMulitVAdapter.
         this.itemMargin = itemMargin;
     }
 
-    public void bindData(List<String> pictures){
+    public void bindData(List<String> pictures) {
         this.pictures = pictures;
         notifyDataSetChanged();
     }
@@ -61,7 +62,9 @@ public class ImageMulitVAdapter extends VirtualLayoutAdapter<ImageMulitVAdapter.
         VirtualLayoutManager.LayoutParams layoutParams = new VirtualLayoutManager.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
         int width = 0, height = 0;
         int imageCount = pictures.size();
-        int displayW = DisplayUtils.getDisplayWidth(context);
+
+        int displayW = DisplayUtils.getDisplayWidth(context) * 4 / 5;
+
         if (imageCount == 1) {
             width = displayW;
             height = width;
@@ -143,17 +146,19 @@ public class ImageMulitVAdapter extends VirtualLayoutAdapter<ImageMulitVAdapter.
         layoutParams.height = height;
         holder.itemView.setLayoutParams(layoutParams);
 
-        final String imageUrl = pictures.get(position);
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (!canDrag) {
-                    if (mItemDelegate != null){
+                    if (mItemDelegate != null) {
                         mItemDelegate.onItemClick(position);
                     }
                 }
             }
         });
+
+        final String imageUrl = pictures.get(position);
         Glide.with(context)
                 .load(imageUrl)
                 .centerCrop()
@@ -190,11 +195,15 @@ public class ImageMulitVAdapter extends VirtualLayoutAdapter<ImageMulitVAdapter.
 
     class ImageViewHolder extends RecyclerView.ViewHolder {
 
-        public ImageView mImageView;
+        ImageView mImageView;
+        LinearLayout rootView;
 
-        public ImageViewHolder(View itemView) {
+        ImageViewHolder(View itemView) {
             super(itemView);
-            mImageView = (ImageView) itemView.findViewById(R.id.item_mulit_image);
+            rootView = itemView.findViewById(R.id.rootView);
+            rootView.measure(View.MeasureSpec.UNSPECIFIED, View.MeasureSpec.UNSPECIFIED);
+
+            mImageView = itemView.findViewById(R.id.item_mulit_image);
         }
     }
 

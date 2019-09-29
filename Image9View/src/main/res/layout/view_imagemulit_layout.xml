@@ -15,7 +15,7 @@
             android:id="@+id/drag_recycler"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:minHeight="180dp"
+            android:background="#0FFF"
             android:overScrollMode="never"
             android:scrollbars="none" />
 
