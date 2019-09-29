@@ -1,9 +1,11 @@
 package com.sinothk.view.image9.demo;
 
 import android.os.Bundle;
+import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -15,23 +17,23 @@ import java.util.List;
  */
 
 public class DemoListActivity extends AppCompatActivity {
-//    Toolbar mToolbar;
+    Toolbar mToolbar;
     RecyclerView mRecyclerView;
     ListAdapter mListAdapter;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_list);
-//        mToolbar = (Toolbar) findViewById(R.id.toolbar);
 
-//        mToolbar.setNavigationIcon(R.mipmap.icon_back);
-//        mToolbar.setTitle("列表");
-//        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                onBackPressed();
-//            }
-//        });
+        setContentView(R.layout.activity_list);
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        mToolbar.setNavigationIcon(R.mipmap.icon_back);
+        mToolbar.setTitle("列表");
+        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
 
         mRecyclerView = (RecyclerView) findViewById(R.id.recyclerview);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));

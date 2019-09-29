@@ -5,6 +5,7 @@ import android.view.View;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.sinothk.view.image9.ImageNice9Layout;
 
@@ -16,6 +17,9 @@ import java.util.List;
  */
 
 public class DemoDragActivity extends AppCompatActivity {
+
+    Toolbar mToolbar;
+
     ImageNice9Layout mImageNice9Layout;
     int num = 1;
     @Override
@@ -23,15 +27,16 @@ public class DemoDragActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drag);
         mImageNice9Layout = (ImageNice9Layout) findViewById(R.id.image_nice9_layout);
-//        mToolbar = (Toolbar) findViewById(R.id.toolbar);
-//        mToolbar.setNavigationIcon(R.mipmap.icon_back);
-//        mToolbar.setTitle("拖拽");
-//        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                onBackPressed();
-//            }
-//        });
+
+        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        mToolbar.setNavigationIcon(R.mipmap.icon_back);
+        mToolbar.setTitle("拖拽");
+        mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                onBackPressed();
+            }
+        });
 
         bindData();
 

@@ -5,14 +5,12 @@
               xmlns:app="http://schemas.android.com/apk/res-auto"
               android:orientation="vertical">
 
-<!--    <android.support.v7.widget.Toolbar-->
-<!--        android:id="@+id/toolbar"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="45dp"-->
-<!--        android:background="@color/colorPrimary"-->
-<!--      >-->
-
-<!--    </android.support.v7.widget.Toolbar>-->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"
+        android:background="@color/colorPrimary"
+      />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -39,7 +37,7 @@
     <com.sinothk.view.image9.ImageNice9Layout
         android:id="@+id/image_nice9_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         app:nice9_candrag="true"
         app:nice9_tipColor="#456778"
