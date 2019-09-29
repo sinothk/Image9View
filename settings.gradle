@@ -1,0 +1,2 @@
+include ':app', ':Image9View'
+rootProject.name='Image9ViewLib'
