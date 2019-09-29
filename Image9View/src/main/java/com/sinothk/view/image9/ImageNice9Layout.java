@@ -4,6 +4,9 @@ import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
+import android.support.annotation.Nullable;
+import android.support.annotation.StringRes;
+import android.support.v7.widget.helper.ItemTouchHelper;
 import android.util.AttributeSet;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,10 +14,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import androidx.annotation.Nullable;
-import androidx.annotation.StringRes;
-import androidx.recyclerview.widget.ItemTouchHelper;
-import androidx.recyclerview.widget.RecyclerView;
+import android.support.v7.widget.RecyclerView;
 
 import com.alibaba.android.vlayout.LayoutHelper;
 import com.alibaba.android.vlayout.VirtualLayoutManager;
@@ -353,16 +353,17 @@ public class ImageNice9Layout extends LinearLayout implements MyItemTouchCallbac
                 }
                 itemTouchHelper = new ItemTouchHelper(new MyItemTouchCallback(mMulitVAdapter).setOnDragListener(this));
                 itemTouchHelper.attachToRecyclerView(mRecycler);
-                mRecycler.addOnItemTouchListener(new OnRecyclerItemClickListener(mRecycler) {
-                    @Override
-                    public void onItemClick(RecyclerView.ViewHolder vh) {
-                    }
 
-                    @Override
-                    public void onLongClick(RecyclerView.ViewHolder vh) {
-                        itemTouchHelper.startDrag(vh);
-                    }
-                });
+//                mRecycler.addOnItemTouchListener(new OnRecyclerItemClickListener(mRecycler) {
+//                    @Override
+//                    public void onItemClick(RecyclerView.ViewHolder vh) {
+//                    }
+//
+//                    @Override
+//                    public void onLongClick(RecyclerView.ViewHolder vh) {
+//                        itemTouchHelper.startDrag(vh);
+//                    }
+//                });
             }
         }
 

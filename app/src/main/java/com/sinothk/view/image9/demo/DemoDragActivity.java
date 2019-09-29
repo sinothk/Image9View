@@ -1,11 +1,10 @@
 package com.sinothk.view.image9.demo;
 
 import android.os.Bundle;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
+import android.support.v7.app.AppCompatActivity;;
 
 import com.sinothk.view.image9.ImageNice9Layout;
 
@@ -23,7 +22,7 @@ public class DemoDragActivity extends AppCompatActivity {
     ImageNice9Layout mImageNice9Layout;
     int num = 1;
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_drag);
         mImageNice9Layout = (ImageNice9Layout) findViewById(R.id.image_nice9_layout);
