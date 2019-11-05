@@ -1,12 +1,13 @@
 package com.sinothk.view.image9.demo;
 
 import android.os.Bundle;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
-import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -25,7 +26,7 @@ public class DemoListActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
 
         setContentView(R.layout.activity_list);
-        mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        mToolbar = findViewById(R.id.toolbar);
         mToolbar.setNavigationIcon(R.mipmap.icon_back);
         mToolbar.setTitle("列表");
         mToolbar.setNavigationOnClickListener(new View.OnClickListener() {
@@ -35,8 +36,10 @@ public class DemoListActivity extends AppCompatActivity {
             }
         });
 
-        mRecyclerView = (RecyclerView) findViewById(R.id.recyclerview);
+        mRecyclerView = findViewById(R.id.recyclerview);
+
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
         List<DemoEntity> demoEntities = new ArrayList<>();
         String[] pices = getResources().getStringArray(R.array.Pictures);
         for (int i = 8; i >= 0; i--) {

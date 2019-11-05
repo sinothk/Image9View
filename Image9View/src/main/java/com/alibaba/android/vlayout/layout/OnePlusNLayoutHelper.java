@@ -34,12 +34,12 @@ import com.alibaba.android.vlayout.VirtualLayoutManager.LayoutParams;
 import com.alibaba.android.vlayout.VirtualLayoutManager.LayoutStateWrapper;
 
 import android.graphics.Rect;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.RecyclerView.State;
 import android.view.View;
 import android.view.View.MeasureSpec;
 import android.view.ViewGroup;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import static android.view.ViewGroup.LayoutParams.MATCH_PARENT;
 import static com.alibaba.android.vlayout.VirtualLayoutManager.VERTICAL;
@@ -283,7 +283,7 @@ public class OnePlusNLayoutHelper extends AbstractFullFillLayoutHelper {
     }
 
     @Override
-    public void checkAnchorInfo(State state, AnchorInfoWrapper anchorInfo, LayoutManagerHelper helper) {
+    public void checkAnchorInfo(RecyclerView.State state, AnchorInfoWrapper anchorInfo, LayoutManagerHelper helper) {
         super.checkAnchorInfo(state, anchorInfo, helper);
         mLayoutWithAnchor = true;
     }

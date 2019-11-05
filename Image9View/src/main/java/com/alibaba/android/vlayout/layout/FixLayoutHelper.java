@@ -30,10 +30,11 @@ import com.alibaba.android.vlayout.VirtualLayoutManager;
 
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
 import android.view.ViewPropertyAnimator;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 import static com.alibaba.android.vlayout.VirtualLayoutManager.VERTICAL;
 
@@ -164,8 +165,8 @@ public class FixLayoutHelper extends FixAreaLayoutHelper {
 
     @Override
     public void layoutViews(RecyclerView.Recycler recycler, RecyclerView.State state,
-            VirtualLayoutManager.LayoutStateWrapper layoutState, LayoutChunkResult result,
-            final LayoutManagerHelper helper) {
+                            VirtualLayoutManager.LayoutStateWrapper layoutState, LayoutChunkResult result,
+                            final LayoutManagerHelper helper) {
         // reach the end of this layout
         if (isOutOfRange(layoutState.getCurrentPosition())) {
             return;

@@ -1,7 +1,8 @@
 package com.alibaba.android.vlayout.extend;
 
-import android.support.annotation.Keep;
 import android.view.View;
+
+import androidx.annotation.Keep;
 
 /**
  * Add callback during measure and layout, help you to monitor your view's performance.<br />

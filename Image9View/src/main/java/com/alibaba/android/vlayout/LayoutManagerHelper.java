@@ -24,10 +24,10 @@
 
 package com.alibaba.android.vlayout;
 
-import android.support.annotation.Nullable;
-import android.support.v7.widget.OrientationHelper;
-import android.support.v7.widget.RecyclerView;
 import android.view.View;
+
+import androidx.annotation.Nullable;
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * LayoutManagerHelper that provides methods for {@link LayoutHelper}

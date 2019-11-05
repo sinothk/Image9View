@@ -24,11 +24,13 @@
 
 package com.alibaba.android.vlayout.layout;
 
-import java.lang.ref.WeakReference;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.BitSet;
-import java.util.List;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+
+import androidx.annotation.NonNull;
+import androidx.core.view.ViewCompat;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.alibaba.android.vlayout.LayoutHelper;
 import com.alibaba.android.vlayout.LayoutManagerHelper;
@@ -38,15 +40,13 @@ import com.alibaba.android.vlayout.VirtualLayoutManager;
 import com.alibaba.android.vlayout.VirtualLayoutManager.LayoutStateWrapper;
 import com.sinothk.view.image9.BuildConfig;
 
-import android.os.Bundle;
-import android.support.annotation.NonNull;
-import android.support.v4.view.ViewCompat;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.RecyclerView.LayoutParams;
-import android.util.Log;
-import android.view.View;
+import java.lang.ref.WeakReference;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.BitSet;
+import java.util.List;
 
-import static android.support.v7.widget.LinearLayoutManager.INVALID_OFFSET;
+import static androidx.recyclerview.widget.LinearLayoutManager.INVALID_OFFSET;
 import static com.alibaba.android.vlayout.VirtualLayoutManager.HORIZONTAL;
 import static com.alibaba.android.vlayout.VirtualLayoutManager.LayoutStateWrapper.LAYOUT_END;
 import static com.alibaba.android.vlayout.VirtualLayoutManager.LayoutStateWrapper.LAYOUT_START;
@@ -401,7 +401,7 @@ public class StaggeredGridLayoutHelper extends BaseLayoutHelper {
         for (int i = prelayoutViewList.size() - 1; i >= 0; i--) {
             View child = prelayoutViewList.get(i);
             if (child != null && orientationHelper.getDecoratedStart(child) > orientationHelper.getEndAfterPadding()) {
-                LayoutParams lp = (LayoutParams) child.getLayoutParams();
+                VirtualLayoutManager.LayoutParams lp = (VirtualLayoutManager.LayoutParams) child.getLayoutParams();
                 int position = lp.getViewPosition();
                 Span span = findSpan(position, child, false);
                 if (span != null) {
@@ -410,7 +410,7 @@ public class StaggeredGridLayoutHelper extends BaseLayoutHelper {
                 helper.removeChildView(child);
                 recycler.recycleView(child);
             } else {
-                LayoutParams lp = (LayoutParams) child.getLayoutParams();
+                VirtualLayoutManager.LayoutParams lp = (VirtualLayoutManager.LayoutParams) child.getLayoutParams();
                 int position = lp.getViewPosition();
                 Span span = findSpan(position, child, false);
                 if (span != null) {
@@ -669,7 +669,7 @@ public class StaggeredGridLayoutHelper extends BaseLayoutHelper {
         while (helper.getChildCount() > 0 && changed) {
             View child = helper.getChildAt(0);
             if (child != null && orientationHelper.getDecoratedEnd(child) < line) {
-                LayoutParams lp = (LayoutParams) child.getLayoutParams();
+                VirtualLayoutManager.LayoutParams lp = (VirtualLayoutManager.LayoutParams) child.getLayoutParams();
                 int position = lp.getViewPosition();
                 Span span = findSpan(position, child, true);
                 if (span != null) {
@@ -692,7 +692,7 @@ public class StaggeredGridLayoutHelper extends BaseLayoutHelper {
         for (i = childCount - 1; i >= 0; i--) {
             View child = helper.getChildAt(i);
             if (child != null && orientationHelper.getDecoratedStart(child) > line) {
-                LayoutParams lp = (LayoutParams) child.getLayoutParams();
+                VirtualLayoutManager.LayoutParams lp = (VirtualLayoutManager.LayoutParams) child.getLayoutParams();
                 int position = lp.getViewPosition();
                 Span span = findSpan(position, child, false);
                 if (span != null) {
@@ -744,7 +744,7 @@ public class StaggeredGridLayoutHelper extends BaseLayoutHelper {
 
             if (child != null) {
                 final OrientationHelperEx orientationHelper = helper.getMainOrientationHelper();
-                LayoutParams lp = (LayoutParams) child.getLayoutParams();
+                VirtualLayoutManager.LayoutParams lp = (VirtualLayoutManager.LayoutParams) child.getLayoutParams();
                 int position = lp.getViewPosition();
 
                 if (helper.getReverseLayout()) {
@@ -1151,7 +1151,7 @@ public class StaggeredGridLayoutHelper extends BaseLayoutHelper {
         }
 
         void prependToSpan(View view, OrientationHelperEx helper) {
-            LayoutParams lp = getLayoutParams(view);
+            VirtualLayoutManager.LayoutParams lp = getLayoutParams(view);
             mViews.add(0, view);
             mCachedStart = INVALID_LINE;
             if (mViews.size() == 1) {
@@ -1163,7 +1163,7 @@ public class StaggeredGridLayoutHelper extends BaseLayoutHelper {
         }
 
         void appendToSpan(View view, OrientationHelperEx helper) {
-            LayoutParams lp = getLayoutParams(view);
+            VirtualLayoutManager.LayoutParams lp = getLayoutParams(view);
             mViews.add(view);
             mCachedEnd = INVALID_LINE;
             if (mViews.size() == 1) {
@@ -1218,7 +1218,7 @@ public class StaggeredGridLayoutHelper extends BaseLayoutHelper {
         void popEnd(OrientationHelperEx helper) {
             final int size = mViews.size();
             View end = mViews.remove(size - 1);
-            final LayoutParams lp = getLayoutParams(end);
+            final VirtualLayoutManager.LayoutParams lp = getLayoutParams(end);
             if (lp.isItemRemoved() || lp.isItemChanged()) {
                 mDeletedSize -= helper.getDecoratedMeasurement(end);
             }
@@ -1239,7 +1239,7 @@ public class StaggeredGridLayoutHelper extends BaseLayoutHelper {
 
         void popStart(OrientationHelperEx helper) {
             View start = mViews.remove(0);
-            final LayoutParams lp = getLayoutParams(start);
+            final VirtualLayoutManager.LayoutParams lp = getLayoutParams(start);
             if (mViews.size() == 0) {
                 mCachedEnd = INVALID_LINE;
             }
@@ -1263,8 +1263,8 @@ public class StaggeredGridLayoutHelper extends BaseLayoutHelper {
             return mDeletedSize;
         }
 
-        LayoutParams getLayoutParams(View view) {
-            return (LayoutParams) view.getLayoutParams();
+        VirtualLayoutManager.LayoutParams getLayoutParams(View view) {
+            return (VirtualLayoutManager.LayoutParams) view.getLayoutParams();
         }
 
         void onOffset(int dt) {

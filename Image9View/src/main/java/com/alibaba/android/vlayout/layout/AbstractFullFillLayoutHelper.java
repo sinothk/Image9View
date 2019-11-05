@@ -25,12 +25,11 @@
 package com.alibaba.android.vlayout.layout;
 
 import android.graphics.Rect;
-import android.support.v7.widget.RecyclerView;
-import android.support.v7.widget.RecyclerView.Recycler;
-import android.support.v7.widget.RecyclerView.State;
 import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup.LayoutParams;
+
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.alibaba.android.vlayout.LayoutManagerHelper;
 import com.alibaba.android.vlayout.Range;
@@ -155,8 +154,8 @@ public abstract class AbstractFullFillLayoutHelper extends BaseLayoutHelper {
     }
 
     @Override
-    public void afterLayout(Recycler recycler, State state, int startPosition, int endPosition, int scrolled,
-        LayoutManagerHelper helper) {
+    public void afterLayout(RecyclerView.Recycler recycler, RecyclerView.State state, int startPosition, int endPosition, int scrolled,
+                            LayoutManagerHelper helper) {
         super.afterLayout(recycler, state, startPosition, endPosition, scrolled, helper);
         mLayoutWithAnchor = false;
     }

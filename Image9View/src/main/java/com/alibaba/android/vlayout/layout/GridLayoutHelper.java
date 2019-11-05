@@ -30,18 +30,17 @@ import com.alibaba.android.vlayout.VirtualLayoutManager;
 import com.alibaba.android.vlayout.VirtualLayoutManager.LayoutParams;
 import com.alibaba.android.vlayout.VirtualLayoutManager.LayoutStateWrapper;
 
-import android.support.annotation.NonNull;
-import android.support.v7.widget.OrientationHelper;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.util.SparseIntArray;
 import android.view.View;
 import android.widget.TextView;
 
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.Arrays;
 
-import static android.support.v7.widget.LinearLayoutManager.VERTICAL;
-
+import static com.alibaba.android.vlayout.VirtualLayoutManager.VERTICAL;
 
 /**
  * LayoutHelper provides GridLayout. The difference with {@link ColumnLayoutHelper} is that this layoutHelper can layout and recycle child views one line by one line.

@@ -29,12 +29,12 @@ import android.content.Context;
 import android.graphics.PointF;
 import android.os.Bundle;
 import android.os.Parcelable;
-import android.support.v4.view.ViewCompat;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.OrientationHelper;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.OrientationHelper;
+import androidx.recyclerview.widget.RecyclerView;
 
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -53,7 +53,6 @@ import com.alibaba.android.vlayout.VirtualLayoutManager.LayoutParams;
 
 
 /**
- * A {@link RecyclerView.LayoutManager} implementation which provides
  * similar functionality to {@link android.widget.ListView}.
  */
 class ExposeLinearLayoutManagerEx extends LinearLayoutManager {
@@ -86,7 +85,6 @@ class ExposeLinearLayoutManagerEx extends LinearLayoutManager {
     /**
      * Many calculations are made depending on orientation. To keep it clean, this interface
      * helps {@link LinearLayoutManager} make those decisions.
-     * Based on {@link #mOrientation}, an implementation is lazily created in
      * {@link #ensureLayoutStateExpose} method.
      */
     private OrientationHelperEx mOrientationHelper;
@@ -100,7 +98,6 @@ class ExposeLinearLayoutManagerEx extends LinearLayoutManager {
     /**
      * This keeps the final value for how LayoutManager should start laying out views.
      * It is calculated by checking {@link #getReverseLayout()} and View's layout direction.
-     * {@link #onLayoutChildren(RecyclerView.Recycler, RecyclerView.State)} is run.
      */
     private boolean mShouldReverseLayoutExpose = false;
 

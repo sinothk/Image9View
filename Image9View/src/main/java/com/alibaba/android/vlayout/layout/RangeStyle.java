@@ -13,13 +13,11 @@ import com.alibaba.android.vlayout.layout.BaseLayoutHelper.LayoutViewBindListene
 import com.alibaba.android.vlayout.layout.BaseLayoutHelper.LayoutViewUnBindListener;
 
 import android.graphics.Rect;
-import android.support.annotation.NonNull;
-import android.support.v4.util.ArrayMap;
-import android.support.v4.util.SimpleArrayMap;
-import android.support.v7.widget.OrientationHelper;
-import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.View;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
 
 /**
  * Created by longerian on 2017/5/10.
@@ -421,7 +419,7 @@ public class RangeStyle<T extends RangeStyle> {
     }
 
     public void beforeLayout(RecyclerView.Recycler recycler, RecyclerView.State state,
-        LayoutManagerHelper helper) {
+                             LayoutManagerHelper helper) {
         if (!isChildrenEmpty()) {
             for (Map.Entry<Range<Integer>, T> entry : mChildren.entrySet()) {
                 RangeStyle childRangeStyle = entry.getValue();
