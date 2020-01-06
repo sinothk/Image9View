@@ -1,4 +1,4 @@
-package com.sinothk.view.image9.demo;
+package com.sinothk.view.image9.demo.style1;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -10,6 +10,7 @@ import android.widget.Toast;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.sinothk.view.image9.ImageNice9Layout;
+import com.sinothk.view.image9.demo.R;
 
 import java.util.List;
 

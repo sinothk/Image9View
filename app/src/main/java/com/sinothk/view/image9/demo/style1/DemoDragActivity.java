@@ -1,4 +1,4 @@
-package com.sinothk.view.image9.demo;
+package com.sinothk.view.image9.demo.style1;
 
 import android.os.Bundle;
 import android.view.View;
@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import com.sinothk.view.image9.ImageNice9Layout;
+import com.sinothk.view.image9.demo.R;
 
 import java.util.ArrayList;
 import java.util.List;
