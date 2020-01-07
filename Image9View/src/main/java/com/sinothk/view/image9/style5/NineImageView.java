@@ -1,4 +1,4 @@
-package com.sinothk.view.image9.style2;
+package com.sinothk.view.image9.style5;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -58,7 +58,6 @@ public class NineImageView extends View {
     private RectF[] mDrawRects;
     private boolean haveRule;
     private Target<Bitmap>[] mTargets = new Target[0];
-
 
     public NineImageView(Context context) {
         this(context, null);
@@ -252,7 +251,18 @@ public class NineImageView extends View {
         mDrawRects = new RectF[newSize];
         mTargets = new Target[newSize];
         if (!haveRule) {
-            mColumns = imageUrls.size() <= 4 ? 2 : 3;
+//            mColumns = imageUrls.size() <= 4 ? 3 : 4;
+
+            if (imageUrls.size() == 1 || imageUrls.size() == 2 || imageUrls.size() == 4) {
+                mColumns = 2;
+
+            } else if (imageUrls.size() == 3 || imageUrls.size() == 5 || imageUrls.size() == 6 || imageUrls.size() == 7) {
+                mColumns = 3;
+            } else if (imageUrls.size() == 8) {
+                mColumns = 4;
+            } else {
+                mColumns = 3;
+            }
         }
         for (int i = 0; i < imageUrls.size(); i++) {
             mTargets[i] = new PositionTarget(i);

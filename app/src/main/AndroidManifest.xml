@@ -13,13 +13,21 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
 
-        <activity android:name=".style3.Image9ImgStyle3DemoMainActivity">
+        <activity android:name=".style5.Image9ImgStyle5DemoMainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+<!--        <activity android:name=".style3.Image9ImgStyle3DemoMainActivity">-->
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+<!--        </activity>-->
+
 
 <!--                <activity android:name=".style2.Image9ImgDemoMainActivity">-->
 <!--                    <intent-filter>-->

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    tools:context=".style2.Image9ImgDemoMainActivity">
+
+    <com.sinothk.view.image9.style5.NineImageView
+        android:id="@+id/multi_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        app:nineImageHorizontalSpace="5dp"
+        app:nineImageRatio="0.8"
+        app:nineImageVerticalSpace="5dp" />
+
+
+</LinearLayout>
