@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context=".style2.Image9ImgDemoMainActivity">
 
-    <com.hotbitmapgg.nineimagelibrary.NineImageView
+    <com.sinothk.view.image9.style2.NineImageView
         android:id="@+id/multi_image"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"

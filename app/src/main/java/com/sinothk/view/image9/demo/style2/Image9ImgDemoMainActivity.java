@@ -4,7 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.hotbitmapgg.nineimagelibrary.NineImageView;
+import com.sinothk.view.image9.style2.NineImageView;
 import com.sinothk.view.image9.demo.R;
 
 import java.util.ArrayList;
