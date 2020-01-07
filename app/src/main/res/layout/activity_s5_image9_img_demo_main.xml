@@ -11,7 +11,7 @@
         android:id="@+id/multi_image"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
+        android:layout_margin="20dp"
         app:nineImageHorizontalSpace="5dp"
         app:nineImageRatio="0.8"
         app:nineImageVerticalSpace="5dp" />
