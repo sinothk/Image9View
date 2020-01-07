@@ -9,7 +9,7 @@ import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.sinothk.view.image9.ImageNice9Layout;
+import com.sinothk.view.image9.style1.ImageNice9Layout;
 import com.sinothk.view.image9.demo.R;
 
 import java.util.List;

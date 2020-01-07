@@ -33,7 +33,7 @@
             android:textSize="15sp" />
     </LinearLayout>
 
-    <com.sinothk.view.image9.ImageNice9Layout
+    <com.sinothk.view.image9.style1.ImageNice9Layout
         android:id="@+id/item_nice9_image"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

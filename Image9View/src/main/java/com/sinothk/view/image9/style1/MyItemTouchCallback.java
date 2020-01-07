@@ -1,4 +1,4 @@
-package com.sinothk.view.image9;
+package com.sinothk.view.image9.style1;
 
 import android.graphics.Canvas;
 import android.graphics.Color;

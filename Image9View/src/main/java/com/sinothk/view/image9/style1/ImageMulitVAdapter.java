@@ -1,4 +1,4 @@
-package com.sinothk.view.image9;
+package com.sinothk.view.image9.style1;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import com.alibaba.android.vlayout.VirtualLayoutAdapter;
 import com.alibaba.android.vlayout.VirtualLayoutManager;
 import com.bumptech.glide.Glide;
+import com.sinothk.view.image9.R;
 
 import java.util.ArrayList;
 import java.util.Collections;

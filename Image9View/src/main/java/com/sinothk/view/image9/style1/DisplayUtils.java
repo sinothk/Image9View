@@ -1,4 +1,4 @@
-package com.sinothk.view.image9;
+package com.sinothk.view.image9.style1;
 
 import android.content.Context;
 import android.view.Display;

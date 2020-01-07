@@ -7,7 +7,7 @@ import android.view.View;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import com.sinothk.view.image9.ImageNice9Layout;
+import com.sinothk.view.image9.style1.ImageNice9Layout;
 import com.sinothk.view.image9.demo.R;
 
 import java.util.ArrayList;

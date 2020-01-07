@@ -21,21 +21,21 @@
 <!--            </intent-filter>-->
 <!--        </activity>-->
 
-                <activity android:name=".style2.Image9ImgDemoMainActivity">
+<!--                <activity android:name=".style2.Image9ImgDemoMainActivity">-->
+<!--                    <intent-filter>-->
+<!--                        <action android:name="android.intent.action.MAIN" />-->
+
+<!--                        <category android:name="android.intent.category.LAUNCHER" />-->
+<!--                    </intent-filter>-->
+<!--                </activity>-->
+
+                <activity android:name=".style1.Image9DemoMainActivity">
                     <intent-filter>
                         <action android:name="android.intent.action.MAIN" />
 
                         <category android:name="android.intent.category.LAUNCHER" />
                     </intent-filter>
                 </activity>
-
-        <!--        <activity android:name=".style1.Image9DemoMainActivity">-->
-        <!--            <intent-filter>-->
-        <!--                <action android:name="android.intent.action.MAIN" />-->
-
-        <!--                <category android:name="android.intent.category.LAUNCHER" />-->
-        <!--            </intent-filter>-->
-        <!--        </activity>-->
         <activity android:name=".style1.DemoListActivity" />
         <activity android:name=".style1.DemoDragActivity" />
     </application>

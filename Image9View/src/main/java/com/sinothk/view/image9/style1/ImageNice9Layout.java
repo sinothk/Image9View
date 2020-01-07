@@ -1,4 +1,4 @@
-package com.sinothk.view.image9;
+package com.sinothk.view.image9.style1;
 
 import android.content.Context;
 import android.content.res.TypedArray;
@@ -20,6 +20,7 @@ import com.alibaba.android.vlayout.LayoutHelper;
 import com.alibaba.android.vlayout.VirtualLayoutManager;
 import com.alibaba.android.vlayout.layout.GridLayoutHelper;
 import com.alibaba.android.vlayout.layout.OnePlusNLayoutHelper;
+import com.sinothk.view.image9.R;
 
 import java.util.LinkedList;
 import java.util.List;
