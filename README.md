@@ -16,7 +16,7 @@
 ## Step 2. Add the dependency
 
     dependencies {
-            implementation 'com.github.sinothk:Image9View:2.x.1105'
+            implementation 'com.github.sinothk:Image9View:3.x.0107'
     }
 
 # 使用
