@@ -3,7 +3,10 @@ package com.sinothk.view.image9.demo.style5;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -38,12 +41,13 @@ public class Image9ImgStyle5DemoMainActivity extends AppCompatActivity {
         NineImageView nineImageView = findViewById(R.id.multi_image);
         //set the picture url set
         nineImageView.setImageUrls(imageUrls);
-        nineImageView.setOnClickItemListener(new NineImageView.OnClickItemListener() {
+
+        LinearLayout rootView = findViewById(R.id.rootView);
+        rootView.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(int i, ArrayList<String> url) {
-                //set the picture click event,then do you have to do operation
+            public void onClick(View v) {
+                Toast.makeText(Image9ImgStyle5DemoMainActivity.this, "rootView", Toast.LENGTH_SHORT).show();
             }
         });
-
     }
 }

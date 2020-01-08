@@ -188,33 +188,33 @@ public class NineImageView extends View {
     }
 
 
-    @Override
-    public boolean onTouchEvent(MotionEvent event) {
-        boolean isClickItem = false;
-        int action = event.getActionMasked();
-        switch (action) {
-            case MotionEvent.ACTION_DOWN:
-                mEventDown = MotionEvent.obtain(event);
-                mDown = getClickItem(mEventDown);
-                isClickItem = mDown > -1;
-                break;
-            case MotionEvent.ACTION_UP:
-                if (mEventDown != null) {
-                    float distance = (float) Math.sqrt(Math.pow((event.getX() - mEventDown.getX()), 2) + Math.pow((event.getY() - mEventDown.getY()), 2));
-                    if (distance < ViewConfiguration.getTouchSlop()) {
-                        int iUp = getClickItem(event);
-                        if (mDown == iUp && iUp > -1) {
-                            isClickItem = true;
-                            if (onClickItemListener != null) {
-                                onClickItemListener.onClick(iUp, new ArrayList<>(Arrays.asList(mImageUrls)));
-                            }
-                        }
-                    }
-                }
-                break;
-        }
-        return isClickItem || super.onTouchEvent(event);
-    }
+//    @Override
+//    public boolean onTouchEvent(MotionEvent event) {
+//        boolean isClickItem = false;
+//        int action = event.getActionMasked();
+//        switch (action) {
+//            case MotionEvent.ACTION_DOWN:
+//                mEventDown = MotionEvent.obtain(event);
+//                mDown = getClickItem(mEventDown);
+//                isClickItem = mDown > -1;
+//                break;
+//            case MotionEvent.ACTION_UP:
+//                if (mEventDown != null) {
+//                    float distance = (float) Math.sqrt(Math.pow((event.getX() - mEventDown.getX()), 2) + Math.pow((event.getY() - mEventDown.getY()), 2));
+//                    if (distance < ViewConfiguration.getTouchSlop()) {
+//                        int iUp = getClickItem(event);
+//                        if (mDown == iUp && iUp > -1) {
+//                            isClickItem = true;
+//                            if (onClickItemListener != null) {
+//                                onClickItemListener.onClick(iUp, new ArrayList<>(Arrays.asList(mImageUrls)));
+//                            }
+//                        }
+//                    }
+//                }
+//                break;
+//        }
+//        return isClickItem || super.onTouchEvent(event);
+//    }
 
     private int getClickItem(MotionEvent event) {
         for (int i = 0; i < mDrawRects.length; i++) {
@@ -276,10 +276,10 @@ public class NineImageView extends View {
         haveRule = true;
     }
 
-
-    public void setOnClickItemListener(OnClickItemListener onClickItemListener) {
-        this.onClickItemListener = onClickItemListener;
-    }
+//
+//    public void setOnClickItemListener(OnClickItemListener onClickItemListener) {
+//        this.onClickItemListener = onClickItemListener;
+//    }
 
     private void setImageRect(int pos) {
         int column = pos / mColumns;
