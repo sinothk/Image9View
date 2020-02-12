@@ -252,7 +252,7 @@ public class ImageNice9Layout extends LinearLayout implements MyItemTouchCallbac
 
     //绑定数据，根据数据，先行计算recyclerview高度，固定高度，防止多重滑动时候冲突
     public void bindData(List<String> pictures) {
-        if (pictures != null) {
+        if (pictures != null && pictures.size() != 0) {
             helpers = new LinkedList<>();
             gridLayoutHelper = new GridLayoutHelper(6);
             gridLayoutHelper.setGap(itemMargin);
@@ -340,6 +340,7 @@ public class ImageNice9Layout extends LinearLayout implements MyItemTouchCallbac
                 }
                 helpers.add(gridLayoutHelper);
             }
+
             layoutManager.setLayoutHelpers(helpers);
             mMulitVAdapter.bindData(pictures);
             mRecycler.setAdapter(mMulitVAdapter);
