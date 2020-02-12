@@ -43,14 +43,22 @@ public class DemoListActivity extends AppCompatActivity {
         mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
 
         List<DemoEntity> demoEntities = new ArrayList<>();
+
         String[] pices = getResources().getStringArray(R.array.Pictures);
-        for (int i = 8; i >= 0; i--) {
-            List<String> picStrings = new ArrayList<>();
-            for (int i1 = 0; i1 <= i; i1++) {
-                picStrings.add(pices[i1]);
-            }
-            demoEntities.add(new DemoEntity(picStrings));
-        }
+//        for (int i = 5; i >= 0; i--) {
+//            List<String> picStrings = new ArrayList<>();
+//            for (int i1 = 0; i1 <= i; i1++) {
+//                picStrings.add(pices[i1]);
+//            }
+//            demoEntities.add(new DemoEntity(picStrings));
+//        }
+
+        List<String> picStrings = new ArrayList<>();
+        picStrings.add(pices[0]);
+        picStrings.add(pices[1]);
+        picStrings.add(pices[2]);
+        demoEntities.add(new DemoEntity(picStrings));
+
         mListAdapter = new ListAdapter(this, demoEntities);
         mRecyclerView.setAdapter(mListAdapter);
 

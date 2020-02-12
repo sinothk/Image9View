@@ -267,7 +267,8 @@ public class ImageNice9Layout extends LinearLayout implements MyItemTouchCallbac
             layoutParams.width = displayW;
             int height;
             if (num == 1) {
-                height = layoutParams.width;
+                layoutParams.width = displayW / 2;
+                height = displayW * 2 / 3;
             } else if (num == 2) {
                 height = (int) (displayW * 0.5);
             } else if (num == 3) {

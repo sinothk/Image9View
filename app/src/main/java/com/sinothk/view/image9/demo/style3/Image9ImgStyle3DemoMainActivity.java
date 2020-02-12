@@ -53,6 +53,6 @@ public class Image9ImgStyle3DemoMainActivity extends AppCompatActivity {
 
         NineGridView nineGrid = this.findViewById(R.id.nineGrid);
         nineGrid.setAdapter(new NineGridClickViewAdapter(this, imageUrls));
-
+//        nineGrid.setO
     }
 }
