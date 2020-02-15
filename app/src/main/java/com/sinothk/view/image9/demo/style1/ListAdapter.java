@@ -4,6 +4,7 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.Toast;
 
 
@@ -36,7 +37,7 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
     }
 
     @Override
-    public void onBindViewHolder(ViewHolder holder, int position) {
+    public void onBindViewHolder(ViewHolder holder, final int position) {
 
         holder.mImageNice9Layout.bindData(mDemoEntities.get(position).pictures);
 
@@ -44,6 +45,13 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
             @Override
             public void onItemClick(int position) {
                 Toast.makeText(mContext, "位置" + position, Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        holder.rootView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(mContext, "Item = " + position, Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -55,9 +63,12 @@ public class ListAdapter extends RecyclerView.Adapter<ListAdapter.ViewHolder> {
 
     class ViewHolder extends RecyclerView.ViewHolder {
         ImageNice9Layout mImageNice9Layout;
+        LinearLayout rootView;
 
         public ViewHolder(View itemView) {
             super(itemView);
+
+            rootView = itemView.findViewById(R.id.rootView);
             mImageNice9Layout = itemView.findViewById(R.id.item_nice9_image);
         }
     }

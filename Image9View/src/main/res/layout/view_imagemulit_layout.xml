@@ -35,6 +35,6 @@
             android:text="长按图片变换顺序"
             android:textColor="#ffffff"
             android:textSize="24sp"
-            android:visibility="visible" />
+            android:visibility="gone" />
     </RelativeLayout>
 </LinearLayout>

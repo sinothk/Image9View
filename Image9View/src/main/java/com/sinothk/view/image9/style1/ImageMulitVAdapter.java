@@ -28,6 +28,7 @@ public class ImageMulitVAdapter extends VirtualLayoutAdapter<ImageMulitVAdapter.
     private boolean canDrag;
     private int itemMargin;
     private ImageNice9Layout.ItemDelegate mItemDelegate;
+
 //    public ImageMulitVAdapter(@NonNull VirtualLayoutManager layoutManager, List<String> pictures, Context context, boolean canDrag, int itemMagrin) {
 //        super(layoutManager);
 //        this.pictures = pictures;
@@ -147,17 +148,21 @@ public class ImageMulitVAdapter extends VirtualLayoutAdapter<ImageMulitVAdapter.
         layoutParams.height = height;
         holder.itemView.setLayoutParams(layoutParams);
 
-
-        holder.itemView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                if (!canDrag) {
-                    if (mItemDelegate != null) {
-                        mItemDelegate.onItemClick(position);
-                    }
+        if (mItemDelegate != null) {
+            holder.itemView.setClickable(true);
+            holder.itemView.setFocusable(true);
+            holder.itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+//                    if (!canDrag) {
+//                    }
+                    mItemDelegate.onItemClick(position);
                 }
-            }
-        });
+            });
+        } else {
+            holder.itemView.setClickable(false);
+            holder.itemView.setFocusable(false);
+        }
 
         final String imageUrl = pictures.get(position);
         Glide.with(context)

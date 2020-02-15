@@ -240,7 +240,9 @@ public class ImageNice9Layout extends LinearLayout implements MyItemTouchCallbac
     }
 
     public void setItemDelegate(ItemDelegate itemDelegate) {
-        mMulitVAdapter.setItemDelegate(itemDelegate);
+        if (itemDelegate != null) {
+            mMulitVAdapter.setItemDelegate(itemDelegate);
+        }
     }
 
     /**
@@ -259,6 +261,7 @@ public class ImageNice9Layout extends LinearLayout implements MyItemTouchCallbac
             gridLayoutHelper.setHGap(itemMargin);
             onePlusHelper = new OnePlusNLayoutHelper(3);
             mTip.setVisibility(canDrag ? VISIBLE : INVISIBLE);
+
             final int num = pictures.size();
             ViewGroup.LayoutParams layoutParams = mRecycler.getLayoutParams();
 
@@ -344,6 +347,7 @@ public class ImageNice9Layout extends LinearLayout implements MyItemTouchCallbac
             layoutManager.setLayoutHelpers(helpers);
             mMulitVAdapter.bindData(pictures);
             mRecycler.setAdapter(mMulitVAdapter);
+
             if (canDrag) {
                 if (!isShowTip && pictures.size() > 1) {
                     mRecycler.postDelayed(new Runnable() {
@@ -355,6 +359,7 @@ public class ImageNice9Layout extends LinearLayout implements MyItemTouchCallbac
                     isShowTip = true;
                 }
                 itemTouchHelper = new ItemTouchHelper(new MyItemTouchCallback(mMulitVAdapter).setOnDragListener(this));
+
                 itemTouchHelper.attachToRecyclerView(mRecycler);
 
 //                mRecycler.addOnItemTouchListener(new OnRecyclerItemClickListener(mRecycler) {
